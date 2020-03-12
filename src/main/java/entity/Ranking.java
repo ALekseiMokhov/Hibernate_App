@@ -1,20 +1,20 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Rankings {
+public class Ranking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Persons observer;
-    private Persons subject;
-    private Skills skill;
+    @OneToOne
+    private Person observer;
+    @OneToOne
+    private Person subject;
+    @OneToOne
+    private Skill skill;
     private Integer ranking;
-    public Rankings() {
+    public Ranking() {
     }
 
     public Long getId() {
@@ -25,27 +25,27 @@ public class Rankings {
         this.id = id;
     }
 
-    public Persons getObserver() {
+    public Person getObserver() {
         return observer;
     }
 
-    public void setObserver(Persons observer) {
+    public void setObserver(Person observer) {
         this.observer = observer;
     }
 
-    public Persons getSubject() {
+    public Person getSubject() {
         return subject;
     }
 
-    public void setSubject(Persons subject) {
+    public void setSubject(Person subject) {
         this.subject = subject;
     }
 
-    public Skills getSkill() {
+    public Skill getSkill() {
         return skill;
     }
 
-    public void setSkill(Skills skill) {
+    public void setSkill(Skill skill) {
         this.skill = skill;
     }
 

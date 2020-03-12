@@ -1,18 +1,21 @@
 package entity;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.*;
 import javax.persistence.*;
 import java.util.List;
 @Entity
-public class Persons {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToMany
-    private List<Skills> skillsList;
+    private List<Skill> skillList;
     @Column
     private String name;
 
-    public Persons() {
+    public Person() {
     }
 
     public Long getId() {
@@ -23,12 +26,12 @@ public class Persons {
         this.id = id;
     }
 
-    public List<Skills> getSkillsList() {
-        return skillsList;
+    public List<Skill> getSkillList() {
+        return skillList;
     }
 
-    public void setSkillsList(List<Skills> skillsList) {
-        this.skillsList = skillsList;
+    public void setSkillList(List<Skill> skillList) {
+        this.skillList = skillList;
     }
 
     public String getName() {
@@ -45,4 +48,6 @@ public class Persons {
                 "name='" + name + '\'' +
                 '}';
     }
+
+
 }

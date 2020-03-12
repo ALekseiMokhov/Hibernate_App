@@ -3,15 +3,15 @@ package entity;
 import javax.persistence.*;
 import java.util.List;
 @Entity
-public class Skills {
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToMany
-    private List<Persons> personsList;
+    private List<Person> personsList;
     private String name;
 
-    public Skills() {
+    public Skill() {
     }
 
     public Long getId() {
@@ -22,11 +22,11 @@ public class Skills {
         this.id = id;
     }
 
-    public List<Persons> getPersonsList() {
+    public List<Person> getPersonsList() {
         return personsList;
     }
 
-    public void setPersonsList(List<Persons> personsList) {
+    public void setPersonsList(List<Person> personsList) {
         this.personsList = personsList;
     }
 

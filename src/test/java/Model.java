@@ -1,21 +1,21 @@
-import entity.Persons;
-import entity.Rankings;
-import entity.Skills;
+import entity.Person;
+import entity.Ranking;
+import entity.Skill;
 import org.testng.annotations.Test;
 
 public class Model {
     @Test
     public void testModelCreation(){
-        Persons subject1 = new Persons();
+        Person subject1 = new Person();
         subject1.setName("G.I.Joe");
 
-        Persons observer1 = new Persons();
+        Person observer1 = new Person();
         observer1.setName("Sergey Kharitonov");
 
-        Skills skill1= new Skills();
+        Skill skill1= new Skill();
         skill1.setName("Java");
 
-        Rankings ranking1 = new Rankings();
+        Ranking ranking1 = new Ranking();
         ranking1.setSubject(subject1);
         ranking1.setObserver(observer1);
         ranking1.setSkill(skill1);
